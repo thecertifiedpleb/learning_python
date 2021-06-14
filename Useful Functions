@@ -1,1 +1,15 @@
+####################################################
+#                  list2string                     #
+####################################################
+#Takes a list variable as input, converts it to a string.
 
+def list2string(phrase):
+    str1 = ""
+    for elem in phrase:
+        str1 += elem
+    
+    return str1
+    
+####################################################
+#                insert name here                  #
+####################################################
