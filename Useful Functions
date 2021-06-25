@@ -11,5 +11,30 @@ def list2string(phrase):
     return str1
     
 ####################################################
-#                insert name here                  #
+#                    ipVerify                      #
 ####################################################
+#Verifies whether the string passed to it is a valid IP address or not
+
+def ipVerify(ipAdd): #Verifies IP address given by user
+    s = ipAdd.split('.')
+    if len(s) != 4:
+        return False
+    for x in s:
+        if not x.isdigit():
+            return False
+        i = int(x)
+        if i < 0 or i > 255:
+            return False
+    return True
+    
+####################################################
+#                    ipResolve                     #
+####################################################  
+#Resolves a hostname into an IP address
+
+def ipResolve(name): #Resolves hostname to IP address
+    try:
+        res = socket.gethostbyname(name)
+        return res
+    except socket.gaierror:
+        print('Host could not be resolved.')
